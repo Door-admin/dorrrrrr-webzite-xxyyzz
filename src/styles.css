@@ -1,7 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Archivo:wght@400;500;600;700;800&family=Gabarito:wght@400;500;600;700&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -49,7 +49,8 @@
   --color-ring-offset-background: var(--background);
   --color-primary-glow: var(--primary-glow);
   --color-primary-deep: var(--primary-deep);
-  --font-display: "Inter", "Helvetica Neue", system-ui, sans-serif;
+  --font-display: "Archivo", "Helvetica Neue", system-ui, sans-serif;
+  --font-sans: "Gabarito", "Inter", system-ui, sans-serif;
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -67,33 +68,34 @@
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.995 0.003 80);
-  --foreground: oklch(0.18 0.02 40);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.02 40);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.02 40);
-  /* Door brand orange ~#FF6A00 */
-  --primary: oklch(0.72 0.205 45);
-  --primary-foreground: oklch(1 0 0);
-  --primary-glow: oklch(0.82 0.18 60);
-  --primary-deep: oklch(0.62 0.21 38);
-  --secondary: oklch(0.97 0.01 60);
-  --secondary-foreground: oklch(0.2 0.02 40);
-  --muted: oklch(0.96 0.008 60);
-  --muted-foreground: oklch(0.5 0.02 40);
-  --accent: oklch(0.95 0.04 60);
-  --accent-foreground: oklch(0.25 0.05 40);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.92 0.01 60);
-  --input: oklch(0.92 0.01 60);
-  --ring: oklch(0.72 0.205 45);
+  /* Light cream , Lollypop-style */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.18 0.02 50);
+  --card: oklch(0.99 0.008 80);
+  --card-foreground: oklch(0.18 0.02 50);
+  --popover: oklch(0.99 0.008 80);
+  --popover-foreground: oklch(0.18 0.02 50);
+  /* Door brand orange */
+  --primary: oklch(0.7 0.21 38);
+  --primary-foreground: oklch(0.99 0.005 80);
+  --primary-glow: oklch(0.84 0.17 55);
+  --primary-deep: oklch(0.55 0.22 32);
+  --secondary: oklch(0.94 0.012 80);
+  --secondary-foreground: oklch(0.2 0.02 50);
+  --muted: oklch(0.93 0.012 80);
+  --muted-foreground: oklch(0.45 0.018 60);
+  --accent: oklch(0.92 0.04 60);
+  --accent-foreground: oklch(0.2 0.02 50);
+  --destructive: oklch(0.62 0.245 27);
+  --destructive-foreground: oklch(0.99 0.003 250);
+  --border: oklch(0.18 0.02 50 / 12%);
+  --input: oklch(0.18 0.02 50 / 16%);
+  --ring: oklch(0.7 0.21 38);
 
-  --gradient-warm: linear-gradient(135deg, oklch(0.78 0.2 55), oklch(0.68 0.21 38));
-  --gradient-radial: radial-gradient(circle at 50% 40%, oklch(0.97 0.04 70) 0%, oklch(0.995 0.003 80) 70%);
-  --shadow-knock: 0 30px 80px -20px oklch(0.72 0.205 45 / 0.45);
-  --shadow-soft: 0 10px 40px -15px oklch(0.4 0.05 40 / 0.2);
+  --gradient-warm: linear-gradient(135deg, oklch(0.82 0.19 60), oklch(0.66 0.21 38));
+  --gradient-radial: radial-gradient(circle at 50% 40%, oklch(0.3 0.06 50 / 0.5) 0%, oklch(0.13 0.005 50) 70%);
+  --shadow-knock: 0 40px 120px -30px oklch(0.74 0.205 48 / 0.55);
+  --shadow-soft: 0 20px 60px -20px oklch(0 0 0 / 0.6);
   --transition-cinema: cubic-bezier(0.65, 0, 0.35, 1);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -153,6 +155,11 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: "Gabarito", "Inter", system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Archivo", "Helvetica Neue", system-ui, sans-serif;
+    letter-spacing: -0.015em;
   }
 }
 
@@ -202,3 +209,9 @@
   100% { transform: scale(1.6); opacity: 0; }
 }
 .pulse-ring { animation: pulse-ring 2s cubic-bezier(0.2,0.8,0.2,1) infinite; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 30s linear infinite; }

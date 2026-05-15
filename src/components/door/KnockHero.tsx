@@ -18,7 +18,7 @@ interface KnockHeroProps {
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-// Word-by-word reveal — inspired by countdown.substraterx.com
+// Word-by-word reveal , inspired by countdown.substraterx.com
 const wordContainer: Variants = {
   hidden: { opacity: 1 },
   visible: {
@@ -74,7 +74,7 @@ function RevealWords({
 
 const stepTransition = { duration: 0.7, ease };
 
-// Zoom-in / zoom-out step variants — like SubstrateRx countdown.
+// Zoom-in / zoom-out step variants , like SubstrateRx countdown.
 const stepVariants: Variants = {
   initial: { opacity: 0, scale: 0.92, filter: "blur(8px)" },
   animate: { opacity: 1, scale: 1, filter: "blur(0px)" },
@@ -155,7 +155,7 @@ export function KnockHero({
               transition={{ duration: 0.6, ease, delay: 0.45 }}
               className="mt-4 text-base md:text-lg text-muted-foreground max-w-xl text-balance"
             >
-              Tell us what brings you to Door — we'll open the right one.
+              Tell us what brings you to Door , we'll open the right one.
             </motion.p>
 
             <motion.div
@@ -227,7 +227,7 @@ export function KnockHero({
                 className="mt-2 text-sm text-muted-foreground"
               >
                 {stage === "filmmaker"
-                  ? "Tell us about your shoot — we'll match you with the right space."
+                  ? "Tell us about your shoot , we'll match you with the right space."
                   : "Share your space with filmmakers and creators around the world."}
               </motion.p>
               <motion.div

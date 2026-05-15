@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useMemo } from "react";
 
 /**
- * Subtle ambient background — soft floating orbs + drifting particles.
+ * Subtle ambient background , soft floating orbs + drifting particles.
  * Inspired by the starfield depth in countdown.substraterx.com but tuned
  * to Door's warm palette.
  */

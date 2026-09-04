@@ -13,6 +13,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ListYourSpaceRouteImport } from './routes/list-your-space'
 import { Route as ExploreRouteImport } from './routes/explore'
+import { Route as DeleteAccountRouteImport } from './routes/delete-account'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -37,6 +38,11 @@ const ExploreRoute = ExploreRouteImport.update({
   path: '/explore',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DeleteAccountRoute = DeleteAccountRouteImport.update({
+  id: '/delete-account',
+  path: '/delete-account',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -57,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/delete-account': typeof DeleteAccountRoute
   '/explore': typeof ExploreRoute
   '/list-your-space': typeof ListYourSpaceRoute
   '/privacy': typeof PrivacyRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/delete-account': typeof DeleteAccountRoute
   '/explore': typeof ExploreRoute
   '/list-your-space': typeof ListYourSpaceRoute
   '/privacy': typeof PrivacyRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/delete-account': typeof DeleteAccountRoute
   '/explore': typeof ExploreRoute
   '/list-your-space': typeof ListYourSpaceRoute
   '/privacy': typeof PrivacyRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/delete-account'
     | '/explore'
     | '/list-your-space'
     | '/privacy'
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/delete-account'
     | '/explore'
     | '/list-your-space'
     | '/privacy'
@@ -105,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/delete-account'
     | '/explore'
     | '/list-your-space'
     | '/privacy'
@@ -115,6 +127,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  DeleteAccountRoute: typeof DeleteAccountRoute
   ExploreRoute: typeof ExploreRoute
   ListYourSpaceRoute: typeof ListYourSpaceRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExploreRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/delete-account': {
+      id: '/delete-account'
+      path: '/delete-account'
+      fullPath: '/delete-account'
+      preLoaderRoute: typeof DeleteAccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -179,6 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  DeleteAccountRoute: DeleteAccountRoute,
   ExploreRoute: ExploreRoute,
   ListYourSpaceRoute: ListYourSpaceRoute,
   PrivacyRoute: PrivacyRoute,

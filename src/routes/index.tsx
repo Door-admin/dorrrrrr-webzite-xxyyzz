@@ -397,7 +397,11 @@ export function Footer() {
           <Link to="/contact" className="hover:text-primary">Contact</Link>
           <Link to="/privacy" className="hover:text-primary">Privacy Policy</Link>
           <Link to="/terms" className="hover:text-primary">Terms &amp; Conditions</Link>
-          
+          <Link to="/delete-account" className="hover:text-primary">Account Deletion</Link>
+          <Link to="/host-terms" className="hover:text-primary">Host Terms</Link>
+          <Link to="/creator-terms" className="hover:text-primary">Creator Terms</Link>
+          <Link to="/shoot-access-policy" className="hover:text-primary">Shoot Access &amp; Permissions Policy</Link>
+          <Link to="/cancellation-policy" className="hover:text-primary">Cancellation Policy</Link>
         </nav>
         <p className="mt-8 text-xs text-muted-foreground">© {new Date().getFullYear()} DOOR Platforms Private Limited. All rights reserved.</p>
       </div>

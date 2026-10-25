@@ -9,55 +9,22 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as ListYourSpaceRouteImport } from './routes/list-your-space'
-import { Route as HostTermsRouteImport } from './routes/host-terms'
-import { Route as ExploreRouteImport } from './routes/explore'
-import { Route as DeleteAccountRouteImport } from './routes/delete-account'
-import { Route as CreatorTermsRouteImport } from './routes/creator-terms'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as CancellationPolicyRouteImport } from './routes/cancellation-policy'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CreatorTermsRouteImport } from './routes/creator-terms'
+import { Route as DeleteAccountRouteImport } from './routes/delete-account'
+import { Route as ExploreRouteImport } from './routes/explore'
+import { Route as HostTermsRouteImport } from './routes/host-terms'
+import { Route as ListYourSpaceRouteImport } from './routes/list-your-space'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ShootAccessPolicyRouteImport } from './routes/shoot-access-policy'
+import { Route as TermsRouteImport } from './routes/terms'
 
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ListYourSpaceRoute = ListYourSpaceRouteImport.update({
-  id: '/list-your-space',
-  path: '/list-your-space',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HostTermsRoute = HostTermsRouteImport.update({
-  id: '/host-terms',
-  path: '/host-terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ExploreRoute = ExploreRouteImport.update({
-  id: '/explore',
-  path: '/explore',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DeleteAccountRoute = DeleteAccountRouteImport.update({
-  id: '/delete-account',
-  path: '/delete-account',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CreatorTermsRoute = CreatorTermsRouteImport.update({
-  id: '/creator-terms',
-  path: '/creator-terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -65,15 +32,61 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const CancellationPolicyRoute = CancellationPolicyRouteImport.update({
+  id: '/cancellation-policy',
+  path: '/cancellation-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreatorTermsRoute = CreatorTermsRouteImport.update({
+  id: '/creator-terms',
+  path: '/creator-terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeleteAccountRoute = DeleteAccountRouteImport.update({
+  id: '/delete-account',
+  path: '/delete-account',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExploreRoute = ExploreRouteImport.update({
+  id: '/explore',
+  path: '/explore',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HostTermsRoute = HostTermsRouteImport.update({
+  id: '/host-terms',
+  path: '/host-terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ListYourSpaceRoute = ListYourSpaceRouteImport.update({
+  id: '/list-your-space',
+  path: '/list-your-space',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShootAccessPolicyRoute = ShootAccessPolicyRouteImport.update({
+  id: '/shoot-access-policy',
+  path: '/shoot-access-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/cancellation-policy': typeof CancellationPolicyRoute
   '/contact': typeof ContactRoute
   '/creator-terms': typeof CreatorTermsRoute
   '/delete-account': typeof DeleteAccountRoute
@@ -81,11 +94,13 @@ export interface FileRoutesByFullPath {
   '/host-terms': typeof HostTermsRoute
   '/list-your-space': typeof ListYourSpaceRoute
   '/privacy': typeof PrivacyRoute
+  '/shoot-access-policy': typeof ShootAccessPolicyRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/cancellation-policy': typeof CancellationPolicyRoute
   '/contact': typeof ContactRoute
   '/creator-terms': typeof CreatorTermsRoute
   '/delete-account': typeof DeleteAccountRoute
@@ -93,12 +108,14 @@ export interface FileRoutesByTo {
   '/host-terms': typeof HostTermsRoute
   '/list-your-space': typeof ListYourSpaceRoute
   '/privacy': typeof PrivacyRoute
+  '/shoot-access-policy': typeof ShootAccessPolicyRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/cancellation-policy': typeof CancellationPolicyRoute
   '/contact': typeof ContactRoute
   '/creator-terms': typeof CreatorTermsRoute
   '/delete-account': typeof DeleteAccountRoute
@@ -106,6 +123,7 @@ export interface FileRoutesById {
   '/host-terms': typeof HostTermsRoute
   '/list-your-space': typeof ListYourSpaceRoute
   '/privacy': typeof PrivacyRoute
+  '/shoot-access-policy': typeof ShootAccessPolicyRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRouteTypes {
@@ -113,6 +131,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/cancellation-policy'
     | '/contact'
     | '/creator-terms'
     | '/delete-account'
@@ -120,11 +139,13 @@ export interface FileRouteTypes {
     | '/host-terms'
     | '/list-your-space'
     | '/privacy'
+    | '/shoot-access-policy'
     | '/terms'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/cancellation-policy'
     | '/contact'
     | '/creator-terms'
     | '/delete-account'
@@ -132,11 +153,13 @@ export interface FileRouteTypes {
     | '/host-terms'
     | '/list-your-space'
     | '/privacy'
+    | '/shoot-access-policy'
     | '/terms'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/cancellation-policy'
     | '/contact'
     | '/creator-terms'
     | '/delete-account'
@@ -144,12 +167,14 @@ export interface FileRouteTypes {
     | '/host-terms'
     | '/list-your-space'
     | '/privacy'
+    | '/shoot-access-policy'
     | '/terms'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CancellationPolicyRoute: typeof CancellationPolicyRoute
   ContactRoute: typeof ContactRoute
   CreatorTermsRoute: typeof CreatorTermsRoute
   DeleteAccountRoute: typeof DeleteAccountRoute
@@ -157,65 +182,17 @@ export interface RootRouteChildren {
   HostTermsRoute: typeof HostTermsRoute
   ListYourSpaceRoute: typeof ListYourSpaceRoute
   PrivacyRoute: typeof PrivacyRoute
+  ShootAccessPolicyRoute: typeof ShootAccessPolicyRoute
   TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/list-your-space': {
-      id: '/list-your-space'
-      path: '/list-your-space'
-      fullPath: '/list-your-space'
-      preLoaderRoute: typeof ListYourSpaceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/host-terms': {
-      id: '/host-terms'
-      path: '/host-terms'
-      fullPath: '/host-terms'
-      preLoaderRoute: typeof HostTermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/explore': {
-      id: '/explore'
-      path: '/explore'
-      fullPath: '/explore'
-      preLoaderRoute: typeof ExploreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/delete-account': {
-      id: '/delete-account'
-      path: '/delete-account'
-      fullPath: '/delete-account'
-      preLoaderRoute: typeof DeleteAccountRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/creator-terms': {
-      id: '/creator-terms'
-      path: '/creator-terms'
-      fullPath: '/creator-terms'
-      preLoaderRoute: typeof CreatorTermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -225,11 +202,74 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/cancellation-policy': {
+      id: '/cancellation-policy'
+      path: '/cancellation-policy'
+      fullPath: '/cancellation-policy'
+      preLoaderRoute: typeof CancellationPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creator-terms': {
+      id: '/creator-terms'
+      path: '/creator-terms'
+      fullPath: '/creator-terms'
+      preLoaderRoute: typeof CreatorTermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/delete-account': {
+      id: '/delete-account'
+      path: '/delete-account'
+      fullPath: '/delete-account'
+      preLoaderRoute: typeof DeleteAccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explore': {
+      id: '/explore'
+      path: '/explore'
+      fullPath: '/explore'
+      preLoaderRoute: typeof ExploreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/host-terms': {
+      id: '/host-terms'
+      path: '/host-terms'
+      fullPath: '/host-terms'
+      preLoaderRoute: typeof HostTermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/list-your-space': {
+      id: '/list-your-space'
+      path: '/list-your-space'
+      fullPath: '/list-your-space'
+      preLoaderRoute: typeof ListYourSpaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shoot-access-policy': {
+      id: '/shoot-access-policy'
+      path: '/shoot-access-policy'
+      fullPath: '/shoot-access-policy'
+      preLoaderRoute: typeof ShootAccessPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -238,6 +278,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CancellationPolicyRoute: CancellationPolicyRoute,
   ContactRoute: ContactRoute,
   CreatorTermsRoute: CreatorTermsRoute,
   DeleteAccountRoute: DeleteAccountRoute,
@@ -245,6 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   HostTermsRoute: HostTermsRoute,
   ListYourSpaceRoute: ListYourSpaceRoute,
   PrivacyRoute: PrivacyRoute,
+  ShootAccessPolicyRoute: ShootAccessPolicyRoute,
   TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport

@@ -12,8 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ListYourSpaceRouteImport } from './routes/list-your-space'
+import { Route as HostTermsRouteImport } from './routes/host-terms'
 import { Route as ExploreRouteImport } from './routes/explore'
 import { Route as DeleteAccountRouteImport } from './routes/delete-account'
+import { Route as CreatorTermsRouteImport } from './routes/creator-terms'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -33,6 +35,11 @@ const ListYourSpaceRoute = ListYourSpaceRouteImport.update({
   path: '/list-your-space',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HostTermsRoute = HostTermsRouteImport.update({
+  id: '/host-terms',
+  path: '/host-terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ExploreRoute = ExploreRouteImport.update({
   id: '/explore',
   path: '/explore',
@@ -41,6 +48,11 @@ const ExploreRoute = ExploreRouteImport.update({
 const DeleteAccountRoute = DeleteAccountRouteImport.update({
   id: '/delete-account',
   path: '/delete-account',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreatorTermsRoute = CreatorTermsRouteImport.update({
+  id: '/creator-terms',
+  path: '/creator-terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -63,8 +75,10 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/creator-terms': typeof CreatorTermsRoute
   '/delete-account': typeof DeleteAccountRoute
   '/explore': typeof ExploreRoute
+  '/host-terms': typeof HostTermsRoute
   '/list-your-space': typeof ListYourSpaceRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
@@ -73,8 +87,10 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/creator-terms': typeof CreatorTermsRoute
   '/delete-account': typeof DeleteAccountRoute
   '/explore': typeof ExploreRoute
+  '/host-terms': typeof HostTermsRoute
   '/list-your-space': typeof ListYourSpaceRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
@@ -84,8 +100,10 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/creator-terms': typeof CreatorTermsRoute
   '/delete-account': typeof DeleteAccountRoute
   '/explore': typeof ExploreRoute
+  '/host-terms': typeof HostTermsRoute
   '/list-your-space': typeof ListYourSpaceRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
@@ -96,8 +114,10 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/creator-terms'
     | '/delete-account'
     | '/explore'
+    | '/host-terms'
     | '/list-your-space'
     | '/privacy'
     | '/terms'
@@ -106,8 +126,10 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/creator-terms'
     | '/delete-account'
     | '/explore'
+    | '/host-terms'
     | '/list-your-space'
     | '/privacy'
     | '/terms'
@@ -116,8 +138,10 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/creator-terms'
     | '/delete-account'
     | '/explore'
+    | '/host-terms'
     | '/list-your-space'
     | '/privacy'
     | '/terms'
@@ -127,8 +151,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  CreatorTermsRoute: typeof CreatorTermsRoute
   DeleteAccountRoute: typeof DeleteAccountRoute
   ExploreRoute: typeof ExploreRoute
+  HostTermsRoute: typeof HostTermsRoute
   ListYourSpaceRoute: typeof ListYourSpaceRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
@@ -157,6 +183,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ListYourSpaceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/host-terms': {
+      id: '/host-terms'
+      path: '/host-terms'
+      fullPath: '/host-terms'
+      preLoaderRoute: typeof HostTermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/explore': {
       id: '/explore'
       path: '/explore'
@@ -169,6 +202,13 @@ declare module '@tanstack/react-router' {
       path: '/delete-account'
       fullPath: '/delete-account'
       preLoaderRoute: typeof DeleteAccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creator-terms': {
+      id: '/creator-terms'
+      path: '/creator-terms'
+      fullPath: '/creator-terms'
+      preLoaderRoute: typeof CreatorTermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -199,8 +239,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  CreatorTermsRoute: CreatorTermsRoute,
   DeleteAccountRoute: DeleteAccountRoute,
   ExploreRoute: ExploreRoute,
+  HostTermsRoute: HostTermsRoute,
   ListYourSpaceRoute: ListYourSpaceRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
